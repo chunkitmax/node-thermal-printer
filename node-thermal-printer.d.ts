@@ -1,21 +1,24 @@
-type printerTypes = {
-  EPSON: "epson";
-  STAR: "start";
-};
-interface printer {
-  printerTypes: printerTypes;
-  init(initConfig: {
-    type?: printerTypes["EPSON"] | printerTypes["STAR"];
-    interface: string;
-    width?: number;
-    characterSet?: string;
-    removeSpecialCharacters?: boolean;
-    options?: { 
-      timeout?: number
-    };
-  }): void;
+export enum PrinterTypes {
+  EPSON = "epson",
+  STAR = "start"
+}
 
-  execute(): Promise;
+interface InitConfig {
+  type?: PrinterTypes;
+  interface: string;
+  width?: number;
+  characterSet?: string;
+  removeSpecialCharacters?: boolean;
+  options?: { 
+    timeout?: number
+  };
+}
+
+export class ThermalPrinter {
+  printerTypes: PrinterTypes;
+  init(config: InitConfig): void;
+
+  execute(): Promise<String>;
   cut(): void;
   partialCut(): void;
   beep(): void;
@@ -100,5 +103,3 @@ interface printer {
   printImageBuffer(buffer: Buffer): Promise<string>;
   raw(text: Buffer): Promise<string>;
 }
-
-export = printer;
