@@ -24,5 +24,8 @@
     "pngjs": "3.3.3",
     "unorm": "1.4.1",
     "write-file-queue": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.5"
   }
 }
