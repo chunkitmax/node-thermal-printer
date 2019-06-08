@@ -16,7 +16,7 @@ interface InitConfig {
 
 export class ThermalPrinter {
   printerTypes: PrinterTypes;
-  init(config: InitConfig): void;
+  constructor(config: InitConfig);
 
   execute(): Promise<String>;
   cut(): void;
