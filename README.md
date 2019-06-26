@@ -19,13 +19,14 @@ sudo apt-get install build-essential
 
 ### Features
 ```js
-const ThermalPrinter = require("../node-thermal-printer").printer;
-const PrinterTypes = require("../node-thermal-printer").types;
+// import { PrinterTypes, ThermalPrinter } from 'node-thermal-printer';
+const ThermalPrinter = require("node-thermal-printer").ThermalPrinter;
+const PrinterTypes = require("node-thermal-printer").PrinterTypes;
 
 let printer = new ThermalPrinter({
   type: PrinterTypes.STAR,                                  // Printer type: 'star' or 'epson'
   interface: 'tcp://xxx.xxx.xxx.xxx',                       // Printer interface
-  characterSet: 'SLOVENIA',                                 // Printer character set - default: SLOVENIA
+  characterSet: 'HK_TW',                                    // Printer character set - default: SLOVENIA (HK_TW tested on TM-88VI)
   removeSpecialCharacters: false,                           // Removes special characters - default: false
   lineCharacter: "=",                                       // Set character for lines - default: "-"
   options:{                                                 // Additional options
@@ -111,8 +112,8 @@ let printer = new ThermalPrinter({
 
 Use a custom printer driver:
 ```js
-const ThermalPrinter = require("../node-thermal-printer").printer;
-const PrinterTypes = require("../node-thermal-printer").types;
+const ThermalPrinter = require("../node-thermal-printer").ThermalPrinter;
+const PrinterTypes = require("../node-thermal-printer").PrinterTypes;
 
 let printer = new ThermalPrinter({
   type: PrinterTypes.EPSON',
