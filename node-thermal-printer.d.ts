@@ -53,7 +53,8 @@ export class ThermalPrinter {
   tableCustom(data: { 
     text: string; 
     align?: "CENTER" | "RIGHT" | "LEFT"; 
-    width?: number; 
+    width?: number;
+    cols?: number;
     bold?: boolean
   }[]): void;
   isPrinterConnected(): Promise<boolean>;
