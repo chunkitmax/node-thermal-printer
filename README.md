@@ -99,8 +99,8 @@ print.getWidth();                                           // Get number of cha
 When using a system printer, you need to provide the driver.
 Use electron-printer or printer driver:
 ```js
-const ThermalPrinter = require("../node-thermal-printer").printer;
-const PrinterTypes = require("../node-thermal-printer").types;
+const ThermalPrinter = require("../node-thermal-printer").ThermalPrinter;
+const PrinterTypes = require("../node-thermal-printer").PrinterTypes;
 const electron = typeof process !== 'undefined' && process.versions && !!process.versions.electron;
 
 let printer = new ThermalPrinter({
